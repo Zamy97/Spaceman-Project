@@ -33,12 +33,16 @@ while wrong_guess <= len(secret_word):
     guess = raw_input("Enter a letter: ")
 
     for letter in range(len(secret_word)-1):
-        print(secret_word[letter])
-        print(right_guess[letter])
 
         if guess == secret_word[letter]:
             right_guess[letter]= guess
         else:
 
-            print(right)
+            # print(right_guess)
             wrong_guess +=1
+
+
+if wrong_guess == len(secret_word):
+    print("you lost")
+else:
+    print("you won")

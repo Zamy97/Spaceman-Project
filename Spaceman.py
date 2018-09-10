@@ -17,9 +17,8 @@ for i in range(len(secret_word)-1):
 
 # This line is appending the '-' the right guess list!
     right_guess.append('-')
-# This asks the user for an input letter.
 
-guess = raw_input("Enter a letter: ")
+
 # print(type(guess))
 
 # if guess in secret_word:
@@ -28,12 +27,18 @@ guess = raw_input("Enter a letter: ")
 # else:
 #     print("Try again")
 
-for letter in range(len(secret_word)-1):
-    print(secret_word[letter])
-    print(right_guess[letter])
+while wrong_guess <= len(secret_word):
 
-    if guess == secret_word[letter]:
-        right_guess[letter]= guess
-    else:
-        
-print(right)
+    # This asks the user for an input letter.
+    guess = raw_input("Enter a letter: ")
+
+    for letter in range(len(secret_word)-1):
+        print(secret_word[letter])
+        print(right_guess[letter])
+
+        if guess == secret_word[letter]:
+            right_guess[letter]= guess
+        else:
+
+            print(right)
+            wrong_guess +=1

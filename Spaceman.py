@@ -22,7 +22,18 @@ for i in range(len(secret_word)-1):
 guess = raw_input("Enter a letter: ")
 # print(type(guess))
 
-if guess in secret_word:
-    print("yayyyyy")
-else:
-    print("Try again")
+# if guess in secret_word:
+#      print("yayyyyy")
+#
+# else:
+#     print("Try again")
+
+for letter in range(len(secret_word)-1):
+    print(secret_word[letter])
+    print(right_guess[letter])
+
+    if guess == secret_word[letter]:
+        right_guess[letter]= guess
+    else:
+        
+print(right)

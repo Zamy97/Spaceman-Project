@@ -10,6 +10,7 @@ print(secret_word)
 
 #This keeps track of how many times my users can incorrectly guess.
 wrong_guess = len(secret_word)
+# it's a string - representation with each letter reveled with being a correct guess.
 right_guess = list()
 
 # it loops through the random word and each time it does it adds a '-' for each letterself.
@@ -27,7 +28,7 @@ for i in range(len(secret_word)-1):
 # else:
 #     print("Try again")
 
-while wrong_guess <= len(secret_word):
+while wrong_guess > 0:
 
     # This asks the user for an input letter.
     guess = raw_input("Enter a letter: ")
@@ -39,10 +40,10 @@ while wrong_guess <= len(secret_word):
         else:
 
             # print(right_guess)
-            wrong_guess +=1
+            wrong_guess -=1
 
 
 if wrong_guess == len(secret_word):
     print("you lost")
 else:
-    print("you won")
+    print("you won! Yaaay")

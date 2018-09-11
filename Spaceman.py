@@ -8,8 +8,9 @@ secret_word = random.choice(lines)
 
 print(secret_word)
 
-#This keeps track of how many times my users can incorrectly guess.
+#This keeps track of how many times users can incorrectly guess.
 wrong_guess = len(secret_word)
+print(wrong_guess)
 # it's a string - representation with each letter reveled with being a correct guess.
 right_guess = list()
 
@@ -39,11 +40,11 @@ while wrong_guess > 0:
             right_guess[letter]= guess
         else:
 
-            # print(right_guess)
             wrong_guess -=1
 
+            print(right_guess)
 
-if wrong_guess == len(secret_word):
-    print("you lost")
-else:
-    print("you won! Yaaay")
+# if wrong_guess == len(secret_word):
+#     print("you lost")
+# else:
+#     print("you won! Yaaay")

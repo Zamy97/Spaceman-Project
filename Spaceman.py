@@ -1,63 +1,78 @@
 import random
 
-lines = open('/usr/share/dict/words', 'r').read().splitlines()
-# print(lines)
+def load_word():
+   f = open('words.txt', 'r')
+   words_list = f.readlines()
+   f.close()
 
-# This will be the varible that will chose a random word for my user to guess.
-secret_word = random.choice(lines)
+   words_list = words_list[0].split(' ')
+   secret_word = random.choice(words_list)
+   return secret_word
 
-print(secret_word)
+def is_word_guessed(secret_word, letters_guessed):
+    '''
+    secretWord: string, the random word the user is trying to guess.  This is selected on line 9.
+    lettersGuessed: list of letters that have been guessed so far.
+    returns: boolean, True only if all the letters of secretWord are in lettersGuessed;
+      False otherwise
 
-dashes = "-" * len(secret_word)
-dashes_left = len(dashes)
-
-while dashes_left >=1:
-    print(dashes)
-    print(str(dashes_left))
-
-    guess = input("Enter a letter: ")
-
-    if guess in secret_word:
-
-
-
-
-
+    '''
+    for letter in letters_guessed::
+        if letter  not in secret_word:
+            return False
+     return True
 
 
 
 
 
 
+    # FILL IN YOUR CODE HERE...
 
-
-
-
-
-#     if len(guess) != 1:
-#         print("please type one letter")
-#
-#     elif guess in secret_word:
-#         print("It is in the word")
-#         dashes = update_dashes(secret_word, dashes, guess)
-#
-#     else:
-#         print("The letter is not in secret word. Try again.")
-#         dashes_left -= 1
-#
-#  if dashes_left < 0:
-#      print("you lost")
-#  else:
-#      print("you win")
+# def get_guessed_word(secret_word, letters_guessed):
+#     '''
+#     secretWord: string, the random word the user is trying to guess.  This is selected on line 9.
+#     lettersGuessed: list of letters that have been guessed so far.
+#     returns: string, of letters and underscores.  For letters in the word that the user has
+#     guessed correctly, the string should contain the letter at the correct position.  For letters
+#     in the word that the user has not yet guessed, shown an _ (underscore) instead.
+#     '''
+#     # FILL IN YOUR CODE HERE...
+#     pass
 #
 #
-# def update_dashes(secret, cur_dash, rec_dash):
-#     result = ""
 #
-#     for i in range(len(secret)):
-#         if secret[i] == rec_dash:
-#             result = result + rec_dash
+# def get_available_letters(letters_guessed):
+#     '''
+#     lettersGuessed: list of letters that have been guessed so far
+#     returns: string, comprised of letters that represents what letters have not
+#       yet been guessed.
+#     '''
+#     pass
 #
-#          else:
-#              result = result + cur_dash[i]
-#     return result
+#
+#
+#
+# def spaceman(secret_word):
+#     '''
+#     secretWord: string, the secret word to guess.
+#     Starts up a game of Spaceman in the command line.
+#     * At the start of the game, let the user know how many
+#       letters the secretWord contains.
+#     * Ask the user to guess one letter per round.
+#     * The user should receive feedback immediately after each guess
+#       about whether their guess appears in the computer's word.
+#     * After each round, you should also display to the user the
+#       partially guessed word so far, as well as letters that the
+#       user has not yet guessed.
+#     '''
+#     # FILL IN YOUR CODE HERE...
+#     pass
+
+
+#
+# secret_word = load_word()
+# spaceman(load_word())
+
+# TESTING AREA
+print(is_word_guessed("HI","HI"))

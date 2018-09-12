@@ -22,7 +22,7 @@ for i in range(len(secret_word)-1):
 
 
 # This asks the user for an input letter.
-guess = raw_input("Enter a letter: ")
+guess = input("Enter a letter: ")
 
 
 # print(type(guess))

@@ -17,10 +17,12 @@ def is_word_guessed(secret_word, letters_guessed):
       False otherwise
 
     '''
-    for letter in letters_guessed::
-        if letter  not in secret_word:
-            return False
-     return True
+
+     true_count = 0
+
+    set_secret_word = ''
+    for letter in secret_word:
+
 
 
 

@@ -24,6 +24,9 @@ def is_word_guessed(secret_word, letters_guessed):
     for letter in secret_word:
          if letter not in set_secret_word:
             set_secret_word += letter
+            
+    set_letters_guessed = ''
+    for letter in letters_guessed:
 
 
 

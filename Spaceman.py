@@ -18,11 +18,11 @@ def is_word_guessed(secret_word, letters_guessed):
 
     '''
 
-     true_count = 0
+true_count = 0
 
-    set_secret_word = ''
-    for letter in secret_word:
-         if letter not in set_secret_word:
+set_secret_word = ''
+for letter in secret_word:
+    if letter not in set_secret_word:
             set_secret_word += letter
 
     set_letters_guessed = ''
@@ -30,15 +30,19 @@ def is_word_guessed(secret_word, letters_guessed):
         if letter not in set_letters_guessed:
             set_letters_guessed += letter
 
+    for guess in set_letters_guessed:
+        if guess in set_secret_word:
+            true_count+=1
+
+    if true_count == len(set_secret_word):
+         return True
+    else:
+        return False
 
 
 
 
 
-
-    # FILL IN YOUR CODE HERE...
-
-# def get_guessed_word(secret_word, letters_guessed):
 #     '''
 #     secretWord: string, the random word the user is trying to guess.  This is selected on line 9.
 #     lettersGuessed: list of letters that have been guessed so far.

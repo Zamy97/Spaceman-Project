@@ -3,14 +3,20 @@ import random
 lines = open('/usr/share/dict/words').read().splitlines()
 #print(lines)
 
-#it's a string - representation with each letter reveled with being a correct guess.
-right_guess = []
-
 # This will be the varible that will chose a random word for my user to guess.
 secret_word = random.choice(lines)
 print(secret_word)
 
-while True:
+#it's a string - representation with each letter reveled with being a correct guess.
+right_guess = []
+
+wrong_guess = []
+
+tries = len(secret_word)
+
+
+
+while tries > 0:
     output = ""
     for letter in secret_word:
         if letter in right_guess:
@@ -25,14 +31,22 @@ while True:
     print("Guess a letter in the word ", output)
     guess = input("Enter a letter: ")
 
-    if guess in right_guess:
-        print("The letter is in the secret word!")
+    if guess in right_guess or guess in wrong_guess:
+        print("Already guessed",guess)
     elif guess in secret_word:
         print("Whatever man")
         right_guess.append(guess)
     else:
         print("This letter is not in the secret word")
+        tries = tries - 1
+        wrong_guess.append(guess)
     print()
+
+if tries:
+    pritn("You guessed the word", secret_word)
+else:
+    print("You didn't get the word", secret_word)
+
 
 
 
@@ -61,18 +75,6 @@ while True:
 # # Check to see whether if the letter is in secret word or not
 # if guess == 'q':
 #     quit()
-
-
-
-
-
-
-
-
-
-
-
-
 # while wrong_guess > 0:
 #     for letter in range(len(secret_word)-1):
 #         if guess.lower() == secret_word[letter]:

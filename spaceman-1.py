@@ -56,10 +56,11 @@ else:
 
 
 
+    
 
 
 
-
+# Look at this when you have time: https://codereview.stackexchange.com/questions/95997/simple-game-of-hangman
 
 #Next like shows how many alphabets are in the word
 # wrong_guess = len(secret_word)

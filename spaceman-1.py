@@ -14,8 +14,6 @@ wrong_guess = []
 
 tries = len(secret_word)
 
-
-
 while tries > 0:
     output = ""
     for letter in secret_word:
@@ -43,7 +41,7 @@ while tries > 0:
     print()
 
 if tries:
-    pritn("You guessed the word", secret_word)
+    print("You guessed the word", secret_word)
 else:
     print("You didn't get the word", secret_word)
 
